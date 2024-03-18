@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Greeting</title>
+</head>
+<body>
+  <h1>Dynamic Greeting</h1>
+
+  <!-- Form for user input -->
+  <form id="nameForm">
+    <label for="name">Enter your name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    <button type="submit">Submit</button><br><br>
+  </form>
+
+  <!-- Container to display greeting message -->
+  <div id="greetingMessage"></div>
+
+  <!-- JavaScript to handle form submission and display greeting -->
+  <script>
+    // Function to handle form submission
+    document.getElementById('nameForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      // Get the value entered in the name input field
+      var name = document.getElementById('name').value;
+
+      // Display the greeting message
+      displayGreeting(name);
+    });
+
+    // Function to display greeting message
+    function displayGreeting(name) {
+      var greetingDiv = document.getElementById('greetingMessage');
+      greetingDiv.innerHTML = 'Hello, ' + name + '! Welcome to our website.';
+    }
+  </script>
+</body>
+</html>
